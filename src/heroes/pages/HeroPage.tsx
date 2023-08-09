@@ -17,9 +17,9 @@ export const HeroPage = () => {
   if (!hero) return <Navigate to="/" />
 
   return (
-    <div className="row mt-4">
+    <div className="row mt-4 animate__animated animate__fadeInLeft">
       <div className="col-4">
-        <img src={`/assets/heroesJpg/${id}.jpg`} alt={hero.superhero} className="img-thumbnail"/>
+        <img src={`/assets/heroesJpg/${id}.jpg`} alt={hero.superhero} className="img-thumbnail "/>
       </div>
 
       <div className="col-8">

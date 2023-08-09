@@ -17,10 +17,10 @@ export const HeroCard = (hero: Hero) => {
   const heroImageUrl: string = `/assets/heroesJpg/${hero.id}.jpg`;
 
   return (
-    <div className="col">
+    <div className="col animate__animated animate__fadeIn">
       <div className="card">
         <div className="row no-gutters">
-          <div className="col-md-4">
+          <div className="col-4 ">
             <img className="card-img" src={heroImageUrl} alt={hero.superhero} />
           </div>
           <div className="col-8">
