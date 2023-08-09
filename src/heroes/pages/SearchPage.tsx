@@ -1,4 +1,5 @@
 import { HeroCard } from "../components";
+
 export const SearchPage = () => {
   return (
     <>
