@@ -1,3 +1,4 @@
+/*realiza control a cambios de variables */
 import { useState, ChangeEvent } from "react";
 
 
@@ -22,8 +23,10 @@ export const useForm = (initialForm: FormState = {})  => {
     }
 
     return {
+        /*propiedades*/
         ...formState,
         formState,
+        /*methods*/
         onInputChange,
         onResetForm
     }
