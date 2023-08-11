@@ -58,7 +58,7 @@ export const SearchPage = () => {
 
           
           <div className="alert alert-danger">
-            No hero with <b>{ q }</b>
+            No hero with <b>{q}</b>
           </div>
 
           {

@@ -6,11 +6,11 @@ export const HeroPage = () => {
 
   const {id} = useParams();
 
-  const navigate = useNavigate();
+  const navigate = useNavigate();/*botan more*/
 
   const hero = useMemo(()=> GetHeroById(id),[id] ); 
 
-  const onNavigateBack = () => {
+  const onNavigateBack = () => {/*boton back*/
     navigate(-1);
   }
 
