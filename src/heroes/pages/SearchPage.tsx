@@ -17,11 +17,14 @@ export const SearchPage = () => {
 
   const onSearchSubmit = (event: React.FormEvent<HTMLFormElement> ) => {
     event.preventDefault();
-    if ( formState.searchText.trim().length <= 1) return;
+   /* if ( formState.searchText.trim().length <= 0) return;*/
 
     navigate(`?q=${formState.searchText.toLowerCase().trim()}`);
   }
 
+  const showSerach: boolean =(q!.length ===0);
+  const showError: boolean = (q!.length >0 && heroes.length===0);
+  
   return (
     <>
       <h1>Search</h1>
@@ -52,15 +55,17 @@ export const SearchPage = () => {
           <h4>Results</h4>
           <hr />
 
-          <div className="alert alert-primary">
-            Search a hero <b>{q}</b>
-          </div>
+          {/*
+            (q==='')
+            ? <div className="alert alert-primary" style={{ display:'none'}}> Search a hero <b>{q}</b>      </div>
+            :(heroes.length ===0)
+            &&<div className="alert alert-danger">No hero with <b>{q}</b></div>
 
-          
-          <div className="alert alert-danger">
-            No hero with <b>{q}</b>
-          </div>
-
+          */}
+       <div className="alert alert-primary animate_animated  animate_fadeIn" style={{ display: showSerach?'': "none"}}>
+        Search a hero <b>{q}</b>
+        </div>
+        <div className="alert alert-danger animate_animated  animate_fadeIn"style={{display:showError?'':"none"}}>No hero with <b>{q}</b></div>
           {
             heroes.map( hero => (
               <HeroCard key={hero.id} {...hero}/>
